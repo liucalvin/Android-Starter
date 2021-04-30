@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:
+  workflow_dispatch: ~
 
 jobs:
   build:
@@ -16,8 +16,6 @@ jobs:
         
       - name: Setup JDK
         uses: actions/setup-java@v2
-        with:
-          java-version: 1.8
         
       - name: Build
         run: ./gradlew assembleDebug
@@ -30,8 +28,6 @@ jobs:
         
       - name: Setup JDK
         uses: actions/setup-java@v2
-        with:
-          java-version: 1.8
           
       - name: Run Unit Tests and Generate Coverage Report
         run: ./gradlew jacocoTestReport
