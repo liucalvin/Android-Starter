@@ -12,16 +12,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2  
+        
+      - name: Setup JDK
+        uses: actions/setup-java@v2
         
       - name: Build
         run: ./gradlew assembleDebug
 
-  unit test:
+  unit-test:
       runs-on: ubuntu-latest
       steps:
       - name: Checkout
         uses: actions/checkout@v2
-          
+                  
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        
       - name: Run Unit Tests and Generate Coverage Report
         run: ./gradlew testDebugUnitTest jacocoTestReport
