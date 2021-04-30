@@ -23,8 +23,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
-      - name: Unit Tests
-        run: ./gradlew testDebugUnitTest
-        
-      - name: Generate Coverage Report
+      - name: Run Unit Tests and Generate Coverage Report
         run: ./gradlew jacocoTestReport
