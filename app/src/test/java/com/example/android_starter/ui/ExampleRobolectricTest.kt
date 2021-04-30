@@ -3,7 +3,7 @@ package com.example.android_starter.ui
 import android.os.Build
 import androidx.test.core.app.ActivityScenario
 import org.junit.After
-import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -12,7 +12,7 @@ import org.robolectric.annotation.Config
 
 @Config(sdk = [Build.VERSION_CODES.O_MR1])
 @RunWith(RobolectricTestRunner::class)
-class MainActivityTest {
+class ExampleRobolectricTest {
 
     private lateinit var activityScenario: ActivityScenario<MainActivity>
 
@@ -29,9 +29,9 @@ class MainActivityTest {
     }
 
     @Test
-    fun test() {
+    fun `example test`() {
         activityScenario.onActivity { activity ->
-            Assert.assertEquals(activity.test(), "Test")
+            assertEquals(activity.testingFunction(), "Test")
         }
     }
 }

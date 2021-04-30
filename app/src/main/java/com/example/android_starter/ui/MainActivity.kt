@@ -29,6 +29,6 @@ class MainActivity : AppCompatActivity() {
         binding.navView.setupWithNavController(navController)
     }
 
-    fun test() = "Test"
+    fun testingFunction() = "Test"
 
 }
